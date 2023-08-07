@@ -35,7 +35,8 @@ func (s *Service) SetupRoutes(r *gin.Engine) {
 
 func main() {
 	r := gin.Default()
-
+        r.Use(gin.Recovery())
+	
 	service := NewService()
 	service.SetupRoutes(r)
 
